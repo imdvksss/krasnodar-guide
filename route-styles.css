@@ -93,6 +93,7 @@ body {
     cursor: pointer;
     padding: 0.5rem;
     z-index: 1001;
+    position: relative;
 }
 
 .mobile-menu-toggle span {
@@ -102,6 +103,7 @@ body {
     background: var(--color-text-light);
     border-radius: 2px;
     transition: all 0.3s;
+    pointer-events: none;
 }
 
 .mobile-menu-toggle.active span:nth-child(1) {
