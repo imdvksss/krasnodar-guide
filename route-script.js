@@ -14,6 +14,34 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Мобильное меню
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Закрытие меню при клике на ссылку
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-container')) {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+
     // Анимация появления карточек остановок
     const stopCards = document.querySelectorAll('.stop-card');
     stopCards.forEach((card, index) => {
@@ -46,35 +74,40 @@ document.addEventListener('DOMContentLoaded', () => {
             const stopNumber = point.getAttribute('data-stop');
             const titles = [
                 '', // 0
-                'Красная Поляна — Горная жемчужина',
-                'Олимпийский парк — Наследие Игр-2014',
-                'Сочи — Курортная столица России',
-                'Гуамское ущелье — Природный памятник',
-                'Геленджик — Город в бухте',
-                'Новороссийск — Город-герой',
-                'Абрау-Дюрсо — Родина русского шампанского',
-                'Анапа — Детская здравница России',
-                'Тамань — Колыбель русского виноделия',
-                'Ейск — Курорт Азовского моря',
-                'Атамань — Казачья станица-музей',
-                'Краснодар — Столица края'
+                'Красная Поляна',
+                'Олимпийский парк', 
+                'Сочи',
+                'Гуамское ущелье',
+                'Геленджик',
+                'Новороссийск',
+                'Абрау-Дюрсо',
+                'Анапа',
+                'Тамань',
+                'Ейск',
+                'Атамань',
+                'Краснодар'
             ];
             
             // Создаём тултип
             const tooltip = document.createElement('div');
             tooltip.className = 'map-tooltip';
-            tooltip.textContent = titles[parseInt(stopNumber)];
+            tooltip.innerHTML = `
+                <div style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0.2rem;">Точка ${stopNumber}</div>
+                <div style="font-size: 1.1rem; font-weight: 700;">${titles[parseInt(stopNumber)]}</div>
+                <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.3rem;">Кликните для перехода</div>
+            `;
             tooltip.style.cssText = `
                 position: fixed;
-                background: rgba(26, 26, 46, 0.95);
+                background: linear-gradient(135deg, #1a1a2e 0%, #2c3e50 100%);
                 color: white;
-                padding: 0.8rem 1.2rem;
-                border-radius: 8px;
+                padding: 1rem 1.5rem;
+                border-radius: 12px;
                 font-size: 0.9rem;
                 z-index: 10000;
                 pointer-events: none;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-                max-width: 300px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+                max-width: 250px;
+                border: 2px solid #DAA520;
             `;
             document.body.appendChild(tooltip);
 
@@ -252,10 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
             mapPoints.forEach((point, index) => {
                 const circle = point.querySelector('circle');
                 if (index === currentStop) {
-                    circle.setAttribute('r', '24');
                     circle.style.filter = 'brightness(1.4) drop-shadow(0 0 10px #C41E3A)';
                 } else {
-                    circle.setAttribute('r', '20');
                     circle.style.filter = '';
                 }
             });
