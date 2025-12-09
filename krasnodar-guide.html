@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кубань: от гор до моря — Интерактивный путеводитель</title>
+    <link rel="stylesheet" href="site-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">КУБАНЬ</div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Главная</a></li>
+                <li><a href="#about" class="nav-link">О регионе</a></li>
+                <li><a href="#nature" class="nav-link">Природа</a></li>
+                <li><a href="#culture" class="nav-link">Культура</a></li>
+                <li><a href="#gastro" class="nav-link">Гастрономия</a></li>
+                <li><a href="#activities" class="nav-link">Активности</a></li>
+                <li><a href="#practical" class="nav-link">Инфо</a></li>
+                <li><a href="tourist-route.html" class="nav-link nav-link-special">🗺️ Маршрут</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Героический блок -->
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                КУБАНЬ:<br>
+                <span class="hero-subtitle">от гор до моря</span>
+            </h1>
+            <p class="hero-description">Земля контрастов, где встречаются заснеженные вершины Кавказа и тёплые воды Чёрного моря</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#about" class="hero-button">Начать путешествие</a>
+                <a href="tourist-route.html" class="hero-button" style="background: transparent; border: 2px solid var(--color-accent); color: var(--color-accent);">🗺️ Туристический маршрут</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Прокрутите вниз</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- О регионе -->
+    <section id="about" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">Сердце Юга России</h2>
+            </div>
+            <div class="two-column">
+                <div class="column-text">
+                    <p class="lead">Краснодарский край — уникальный регион, где за один день можно увидеть заснеженные вершины Кавказа и искупаться в тёплом Чёрном море.</p>
+                    <p>Площадь 75,5 тысяч км² простирается от Азовских лиманов до альпийских лугов. Это земля контрастов: древние дольмены соседствуют с современными курортами, казачьи традиции переплетаются с многонациональной культурой.</p>
+                </div>
+                <div class="column-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">5,8 млн</div>
+                        <div class="stat-label">жителей</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">400 км</div>
+                        <div class="stat-label">побережья</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">17 000+</div>
+                        <div class="stat-label">памятников</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">60%</div>
+                        <div class="stat-label">российского вина</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Природа -->
+    <section id="nature" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Природные богатства</h2>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card card-nature">
+                    <div class="card-icon">🏖️</div>
+                    <h3 class="card-title">Черноморское побережье</h3>
+                    <p class="card-text">От Большого Сочи до Анапы — 400 км курортной зоны с субтропическим климатом, песчаными пляжами и целебным морем.</p>
+                    <ul class="card-list">
+                        <li>Олимпийский парк в Сочи</li>
+                        <li>Геленджикская бухта</li>
+                        <li>Анапа — детская здравница</li>
+                    </ul>
+                </div>
+
+                <div class="card card-nature">
+                    <div class="card-icon">⛰️</div>
+                    <h3 class="card-title">Западный Кавказ</h3>
+                    <p class="card-text">Объект всемирного наследия ЮНЕСКО. Горные вершины до 2867 м, ледники, альпийские луга и современные горнолыжные курорты.</p>
+                    <ul class="card-list">
+                        <li>Красная Поляна — 132 км трасс</li>
+                        <li>Плато Лаго-Наки</li>
+                        <li>Гуамское ущелье</li>
+                    </ul>
+                </div>
+
+                <div class="card card-nature">
+                    <div class="card-icon">🌊</div>
+                    <h3 class="card-title">Азовское море</h3>
+                    <p class="card-text">Самое тёплое и мелкое море России. Идеально для семейного отдыха, виндсёрфинга и наблюдения за цветением лотосов.</p>
+                    <ul class="card-list">
+                        <li>Ейск и коса Долгая</li>
+                        <li>Ахтанизовский лиман</li>
+                        <li>Целебные грязи</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Культура -->
+    <section id="culture" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">История и культура</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">III-II тыс. до н.э.</h3>
+                        <p class="timeline-text"><strong>Дольмены Западного Кавказа</strong> — мегалитические сооружения из каменных плит весом до 30 тонн. Более 100 дольменов в районе Геленджика хранят тайны древних цивилизаций.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">IV в. до н.э.</h3>
+                        <p class="timeline-text"><strong>Античное наследие</strong> — остатки древнегреческого города Горгиппия в Анапе, Гермонасса на Тамани. Археологические музеи под открытым небом.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">1792 год</h3>
+                        <p class="timeline-text"><strong>Кубанское казачество</strong> — черноморские казаки получили земли от Екатерины II. Сегодня казачья культура живёт в традициях, музыках и этнокомплексе «Атамань».</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">XX-XXI век</h3>
+                        <p class="timeline-text"><strong>Современность</strong> — архитектурное наследие от купеческих особняков до Олимпийских объектов 2014 года. Культурная жизнь: Кинотавр, Новая волна, более 100 музеев.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Гастрономия -->
+    <section id="gastro" class="section section-accent">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Вкусы Кубани</h2>
+            </div>
+
+            <div class="gastro-grid">
+                <div class="gastro-card">
+                    <h3 class="gastro-title">🍲 Традиционная кухня</h3>
+                    <p class="gastro-text">Кубанский борщ, вареники, кавардак, сало — украинские традиции смешались с адыгскими и греческими рецептами.</p>
+                    <div class="gastro-tags">
+                        <span class="tag">Борщ</span>
+                        <span class="tag">Вареники</span>
+                        <span class="tag">Адыгейский сыр</span>
+                    </div>
+                </div>
+
+                <div class="gastro-card">
+                    <h3 class="gastro-title">🍷 Виноделие</h3>
+                    <p class="gastro-text">Родина российского виноделия. Абрау-Дюрсо, Фанагория, Мысхако — винные туры с дегустациями игристых и тихих вин.</p>
+                    <div class="gastro-tags">
+                        <span class="tag">Красностоп</span>
+                        <span class="tag">Шампанское</span>
+                        <span class="tag">Дегустации</span>
+                    </div>
+                </div>
+
+                <div class="gastro-card">
+                    <h3 class="gastro-title">🐟 Рыбные богатства</h3>
+                    <p class="gastro-text">Азовское море — самое продуктивное в мире. Вяленый бычок, копчёная тарань, осетровая икра, барабулька.</p>
+                    <div class="gastro-tags">
+                        <span class="tag">Тарань</span>
+                        <span class="tag">Икра</span>
+                        <span class="tag">Барабулька</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Активный отдых -->
+    <section id="activities" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Активный отдых</h2>
+            </div>
+
+            <div class="activities-grid">
+                <div class="activity-item">
+                    <div class="activity-icon">⛷️</div>
+                    <h3>Горные лыжи</h3>
+                    <p>Красная Поляна: три курорта, 132 км трасс, сезон декабрь-апрель</p>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">🥾</div>
+                    <h3>Треккинг</h3>
+                    <p>Маршруты к водопадам, на Фишт, по Гуамскому ущелью</p>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">🏄</div>
+                    <h3>Водные виды</h3>
+                    <p>Дайвинг, виндсёрфинг, рафтинг, яхтинг</p>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">🦌</div>
+                    <h3>Экотуризм</h3>
+                    <p>Кавказский заповедник, Сочинский нацпарк, заповедник Утриш</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="tourist-route.html" style="display: inline-block; padding: 1rem 2.5rem; background: var(--color-primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s; box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);">
+                    🗺️ Посмотреть детальный туристический маршрут (12 точек)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Практическая информация -->
+    <section id="practical" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Практическая информация</h2>
+            </div>
+
+            <div class="practical-grid">
+                <div class="practical-card">
+                    <h3>✈️ Как добраться</h3>
+                    <ul>
+                        <li>Аэропорты: Краснодар, Сочи (Адлер), Анапа, Геленджик</li>
+                        <li>Поезд: через Краснодар из всех регионов России</li>
+                        <li>Автомобиль: трасса М-4 «Дон» из Москвы (1300 км)</li>
+                    </ul>
+                </div>
+
+                <div class="practical-card">
+                    <h3>🌤️ Лучшее время</h3>
+                    <ul>
+                        <li>Май-июнь: цветение, комфортная температура</li>
+                        <li>Июль-август: пляжный сезон +28-32°C</li>
+                        <li>Сентябрь: бархатный сезон, сбор винограда</li>
+                        <li>Декабрь-март: горнолыжный сезон</li>
+                    </ul>
+                </div>
+
+                <div class="practical-card">
+                    <h3>🏨 Где остановиться</h3>
+                    <ul>
+                        <li>Отели и курорты (от 3 до 5 звёзд)</li>
+                        <li>Частный сектор и гостевые дома</li>
+                        <li>Санатории с лечением</li>
+                        <li>Кемпинги и глэмпинги</li>
+                    </ul>
+                </div>
+
+                <div class="practical-card">
+                    <h3>💡 Полезные советы</h3>
+                    <ul>
+                        <li>Бронируйте жильё заранее в высокий сезон</li>
+                        <li>Берите крем от солнца (южное солнце активное)</li>
+                        <li>В горах одевайтесь слоями</li>
+                        <li>Уважайте местные традиции</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок с призывом к действию - маршрут -->
+    <section style="padding: 5rem 2rem; background: linear-gradient(135deg, #C41E3A 0%, #1F4788 100%); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 1.5rem;">Готовы отправиться в путешествие?</h2>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8; opacity: 0.95;">
+                Мы подготовили детальный туристический маршрут с 12 остановками: от горнолыжных курортов Красной Поляны через черноморское побережье до винодельческих хозяйств Тамани.
+            </p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem 1.5rem; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <div style="font-size: 2rem; font-weight: 900; font-family: var(--font-display);">12</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">остановок</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem 1.5rem; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <div style="font-size: 2rem; font-weight: 900; font-family: var(--font-display);">600</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">километров</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem 1.5rem; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <div style="font-size: 2rem; font-weight: 900; font-family: var(--font-display);">10</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">дней</div>
+                </div>
+            </div>
+            <a href="tourist-route.html" style="display: inline-block; padding: 1.2rem 3rem; background: var(--color-accent); color: var(--color-dark); text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; transition: all 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                🗺️ Открыть маршрут
+            </a>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>КУБАНЬ</h4>
+                    <p>Интерактивный путеводитель по Краснодарскому краю</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <p>Туристический портал: visitkuban.ru</p>
+                    <p>МЧС: 112 | Полиция: 102</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Проект</h4>
+                    <p>Проектное задание 2024</p>
+                    <p>«Создание интерактивного путеводителя по региону»</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>#КраснодарскийКрай #Кубань #ПутешествияПоРоссии #ЮгРоссии</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site-script.js"></script>
+</body>
+</html>
