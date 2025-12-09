@@ -15,6 +15,34 @@ const observer = new IntersectionObserver((entries) => {
 
 // Анимация появления для всех секций
 document.addEventListener('DOMContentLoaded', () => {
+    // Мобильное меню
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Закрытие меню при клике на ссылку
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-container')) {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+
     // Инициализация анимаций
     const animatedElements = document.querySelectorAll('.card, .timeline-item, .gastro-card, .activity-item, .practical-card, .stat-box');
     
