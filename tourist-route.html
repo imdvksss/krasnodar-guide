@@ -14,11 +14,16 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">КУБАНЬ</div>
+            <button class="mobile-menu-toggle" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-menu">
-                <li><a href="krasnodar-guide.html" class="nav-link">← Главная</a></li>
-                <li><a href="krasnodar-guide.html#nature" class="nav-link">Природа</a></li>
-                <li><a href="krasnodar-guide.html#culture" class="nav-link">Культура</a></li>
-                <li><a href="krasnodar-guide.html#gastro" class="nav-link">Гастрономия</a></li>
+                <li><a href="./" class="nav-link">← Главная</a></li>
+                <li><a href="./#nature" class="nav-link">Природа</a></li>
+                <li><a href="./#culture" class="nav-link">Культура</a></li>
+                <li><a href="./#gastro" class="nav-link">Гастрономия</a></li>
                 <li><a href="#map-section" class="nav-link nav-link-active">Маршрут</a></li>
             </ul>
         </div>
@@ -27,7 +32,7 @@
     <!-- Хлебные крошки -->
     <div style="background: #f8f9fa; padding: 1rem 2rem; margin-top: 70px; border-bottom: 1px solid #e0e0e0;">
         <div style="max-width: 1400px; margin: 0 auto; font-size: 0.9rem; color: #666;">
-            <a href="krasnodar-guide.html" style="color: #1F4788; text-decoration: none; transition: color 0.3s;">Главная</a>
+            <a href="./" style="color: #1F4788; text-decoration: none; transition: color 0.3s;">Главная</a>
             <span style="margin: 0 0.5rem; color: #999;">→</span>
             <span style="color: #333; font-weight: 600;">Туристический маршрут</span>
         </div>
@@ -66,135 +71,147 @@
         <div class="container">
             <h2 class="section-title">Карта маршрута</h2>
             <div class="map-container">
-                <svg viewBox="0 0 1000 700" class="route-map">
+                <svg viewBox="0 0 1200 800" class="route-map">
                     <!-- Фон карты -->
                     <defs>
                         <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#e8f4f8;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#b8dce8;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#f0f8ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#e0f0f8;stop-opacity:1" />
                         </linearGradient>
                         
                         <!-- Тени для точек -->
                         <filter id="shadow">
-                            <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+                            <feDropShadow dx="2" dy="2" stdDeviation="4" flood-opacity="0.4"/>
+                        </filter>
+                        
+                        <!-- Фон для текста -->
+                        <filter id="textBg">
+                            <feFlood flood-color="white" flood-opacity="0.9"/>
+                            <feComposite in="SourceGraphic" operator="over"/>
                         </filter>
                     </defs>
                     
                     <!-- Контур региона (упрощённый) -->
-                    <path d="M 100 300 Q 150 200 250 180 L 400 160 Q 500 140 600 160 L 750 180 Q 850 200 900 280 L 920 400 Q 900 500 850 550 L 700 580 Q 550 600 450 580 L 300 550 Q 200 520 150 450 Z" 
+                    <path d="M 150 350 Q 200 250 300 220 L 480 200 Q 600 180 720 200 L 900 220 Q 1000 250 1050 330 L 1070 470 Q 1050 570 1000 620 L 850 650 Q 660 670 540 650 L 360 620 Q 250 590 180 520 Z" 
                           fill="url(#mapGradient)" 
-                          stroke="#2c5282" 
+                          stroke="#6b9bd1" 
                           stroke-width="3" 
-                          opacity="0.3"/>
+                          opacity="0.4"/>
                     
                     <!-- Горная зона (север) -->
-                    <path d="M 250 180 Q 300 160 350 150 L 450 140 Q 550 150 600 160 L 650 180 Q 600 200 550 210 L 450 220 Q 350 210 300 200 Z" 
-                          fill="#8B7355" 
-                          opacity="0.4"/>
+                    <path d="M 300 220 Q 360 200 420 190 L 540 180 Q 660 190 720 200 L 780 220 Q 720 240 660 250 L 540 260 Q 420 250 360 240 Z" 
+                          fill="#c9b896" 
+                          opacity="0.3"/>
                     
                     <!-- Линии маршрута -->
                     <path class="route-line" 
-                          d="M 450 200 L 420 240 L 380 280 L 350 330 L 320 380 L 350 420 L 400 450 L 480 480 L 560 500 L 640 480 L 700 440 L 740 400"
+                          d="M 540 250 L 504 300 L 456 350 L 420 410 L 384 470 L 420 520 L 480 560 L 576 590 L 672 610 L 768 590 L 840 540 L 888 490"
                           stroke="#C41E3A" 
-                          stroke-width="4" 
-                          stroke-dasharray="10,5"
+                          stroke-width="5" 
+                          stroke-dasharray="12,6"
                           fill="none"
-                          opacity="0.6"/>
+                          opacity="0.7"/>
                     
-                    <!-- Точки маршрута -->
+                    <!-- Точки маршрута с минимальным текстом -->
+                    <!-- Точки маршрута с минимальным текстом -->
                     <!-- 1. Красная Поляна -->
                     <g class="map-point" data-stop="1">
-                        <text x="450" y="175" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Красная Поляна</text>
-                        <circle cx="450" cy="200" r="20" fill="#C41E3A" filter="url(#shadow)"/>
-                        <text x="450" y="207" text-anchor="middle" fill="white" font-weight="bold" font-size="16">1</text>
+                        <circle cx="540" cy="250" r="24" fill="#C41E3A" filter="url(#shadow)"/>
+                        <text x="540" y="260" text-anchor="middle" fill="white" font-weight="bold" font-size="18">1</text>
                     </g>
                     
                     <!-- 2. Олимпийский парк -->
                     <g class="map-point" data-stop="2">
-                        <text x="420" y="215" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Олимпийский парк</text>
-                        <circle cx="420" cy="240" r="20" fill="#C41E3A" filter="url(#shadow)"/>
-                        <text x="420" y="247" text-anchor="middle" fill="white" font-weight="bold" font-size="16">2</text>
+                        <circle cx="504" cy="300" r="24" fill="#C41E3A" filter="url(#shadow)"/>
+                        <text x="504" y="310" text-anchor="middle" fill="white" font-weight="bold" font-size="18">2</text>
                     </g>
                     
                     <!-- 3. Сочи -->
                     <g class="map-point" data-stop="3">
-                        <text x="330" y="275" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Сочи</text>
-                        <circle cx="380" cy="280" r="20" fill="#C41E3A" filter="url(#shadow)"/>
-                        <text x="380" y="287" text-anchor="middle" fill="white" font-weight="bold" font-size="16">3</text>
+                        <circle cx="456" cy="350" r="24" fill="#C41E3A" filter="url(#shadow)"/>
+                        <text x="456" y="360" text-anchor="middle" fill="white" font-weight="bold" font-size="18">3</text>
+                        <rect x="390" y="336" width="60" height="22" rx="4" fill="white" opacity="0.9"/>
+                        <text x="420" y="352" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="14">Сочи</text>
                     </g>
                     
                     <!-- 4. Гуамское ущелье -->
                     <g class="map-point" data-stop="4">
-                        <text x="275" y="325" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Гуамское ущелье</text>
-                        <circle cx="350" cy="330" r="20" fill="#C41E3A" filter="url(#shadow)"/>
-                        <text x="350" y="337" text-anchor="middle" fill="white" font-weight="bold" font-size="16">4</text>
+                        <circle cx="420" cy="410" r="24" fill="#C41E3A" filter="url(#shadow)"/>
+                        <text x="420" y="420" text-anchor="middle" fill="white" font-weight="bold" font-size="18">4</text>
                     </g>
                     
                     <!-- 5. Геленджик -->
                     <g class="map-point" data-stop="5">
-                        <text x="255" y="375" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Геленджик</text>
-                        <circle cx="320" cy="380" r="20" fill="#C41E3A" filter="url(#shadow)"/>
-                        <text x="320" y="387" text-anchor="middle" fill="white" font-weight="bold" font-size="16">5</text>
+                        <circle cx="384" cy="470" r="24" fill="#C41E3A" filter="url(#shadow)"/>
+                        <text x="384" y="480" text-anchor="middle" fill="white" font-weight="bold" font-size="18">5</text>
+                        <rect x="300" y="456" width="80" height="22" rx="4" fill="white" opacity="0.9"/>
+                        <text x="340" y="472" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="14">Геленджик</text>
                     </g>
                     
                     <!-- 6. Новороссийск -->
                     <g class="map-point" data-stop="6">
-                        <text x="280" y="415" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Новороссийск</text>
-                        <circle cx="350" cy="420" r="20" fill="#C41E3A" filter="url(#shadow)"/>
-                        <text x="350" y="427" text-anchor="middle" fill="white" font-weight="bold" font-size="16">6</text>
+                        <circle cx="420" cy="520" r="24" fill="#C41E3A" filter="url(#shadow)"/>
+                        <text x="420" y="530" text-anchor="middle" fill="white" font-weight="bold" font-size="18">6</text>
                     </g>
                     
                     <!-- 7. Абрау-Дюрсо -->
                     <g class="map-point" data-stop="7">
-                        <text x="330" y="445" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Абрау-Дюрсо</text>
-                        <circle cx="400" cy="450" r="20" fill="#C41E3A" filter="url(#shadow)"/>
-                        <text x="400" y="457" text-anchor="middle" fill="white" font-weight="bold" font-size="16">7</text>
+                        <circle cx="480" cy="560" r="24" fill="#C41E3A" filter="url(#shadow)"/>
+                        <text x="480" y="570" text-anchor="middle" fill="white" font-weight="bold" font-size="18">7</text>
                     </g>
                     
                     <!-- 8. Анапа -->
                     <g class="map-point" data-stop="8">
-                        <circle cx="480" cy="480" r="20" fill="#C41E3A" filter="url(#shadow)"/>
-                        <text x="480" y="487" text-anchor="middle" fill="white" font-weight="bold" font-size="16">8</text>
-                        <text x="480" y="515" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Анапа</text>
+                        <circle cx="576" cy="590" r="24" fill="#C41E3A" filter="url(#shadow)"/>
+                        <text x="576" y="600" text-anchor="middle" fill="white" font-weight="bold" font-size="18">8</text>
+                        <rect x="536" y="612" width="80" height="22" rx="4" fill="white" opacity="0.9"/>
+                        <text x="576" y="628" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="14">Анапа</text>
                     </g>
                     
                     <!-- 9. Тамань -->
                     <g class="map-point" data-stop="9">
-                        <circle cx="560" cy="500" r="20" fill="#C41E3A" filter="url(#shadow)"/>
-                        <text x="560" y="507" text-anchor="middle" fill="white" font-weight="bold" font-size="16">9</text>
-                        <text x="560" y="535" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Тамань</text>
+                        <circle cx="672" cy="610" r="24" fill="#C41E3A" filter="url(#shadow)"/>
+                        <text x="672" y="620" text-anchor="middle" fill="white" font-weight="bold" font-size="18">9</text>
+                        <rect x="632" y="632" width="80" height="22" rx="4" fill="white" opacity="0.9"/>
+                        <text x="672" y="648" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="14">Тамань</text>
                     </g>
                     
                     <!-- 10. Ейск -->
                     <g class="map-point" data-stop="10">
-                        <circle cx="640" cy="480" r="20" fill="#C41E3A" filter="url(#shadow)"/>
-                        <text x="640" y="487" text-anchor="middle" fill="white" font-weight="bold" font-size="16">10</text>
-                        <text x="640" y="515" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Ейск</text>
+                        <circle cx="768" cy="590" r="24" fill="#C41E3A" filter="url(#shadow)"/>
+                        <text x="768" y="600" text-anchor="middle" fill="white" font-weight="bold" font-size="18">10</text>
+                        <rect x="738" y="612" width="60" height="22" rx="4" fill="white" opacity="0.9"/>
+                        <text x="768" y="628" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="14">Ейск</text>
                     </g>
                     
                     <!-- 11. Атамань -->
                     <g class="map-point" data-stop="11">
-                        <circle cx="700" cy="440" r="20" fill="#C41E3A" filter="url(#shadow)"/>
-                        <text x="700" y="447" text-anchor="middle" fill="white" font-weight="bold" font-size="16">11</text>
-                        <text x="755" y="435" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Атамань</text>
+                        <circle cx="840" cy="540" r="24" fill="#C41E3A" filter="url(#shadow)"/>
+                        <text x="840" y="550" text-anchor="middle" fill="white" font-weight="bold" font-size="18">11</text>
                     </g>
                     
                     <!-- 12. Краснодар -->
                     <g class="map-point" data-stop="12">
-                        <text x="740" y="375" text-anchor="middle" fill="#1a1a2e" font-weight="600" font-size="13">Краснодар</text>
-                        <circle cx="740" cy="400" r="20" fill="#DAA520" filter="url(#shadow)"/>
-                        <text x="740" y="407" text-anchor="middle" fill="white" font-weight="bold" font-size="16">12</text>
+                        <circle cx="888" cy="490" r="26" fill="#DAA520" filter="url(#shadow)"/>
+                        <text x="888" y="500" text-anchor="middle" fill="white" font-weight="bold" font-size="18">12</text>
+                        <rect x="818" y="462" width="140" height="24" rx="4" fill="white" opacity="0.95"/>
+                        <text x="888" y="480" text-anchor="middle" fill="#1a1a2e" font-weight="700" font-size="15">Краснодар</text>
                     </g>
                     
                     <!-- Легенда -->
                     <g class="map-legend">
-                        <rect x="50" y="580" width="280" height="90" fill="white" opacity="0.95" rx="10"/>
-                        <text x="70" y="610" font-weight="700" font-size="16" fill="#1a1a2e">Легенда:</text>
-                        <circle cx="70" cy="635" r="8" fill="#C41E3A"/>
-                        <text x="90" y="640" font-size="14" fill="#2c3e50">Остановки маршрута</text>
-                        <circle cx="70" cy="660" r="8" fill="#DAA520"/>
-                        <text x="90" y="665" font-size="14" fill="#2c3e50">Финальная точка</text>
+                        <rect x="80" y="680" width="340" height="100" fill="white" opacity="0.98" rx="12" stroke="#6b9bd1" stroke-width="2"/>
+                        <text x="110" y="715" font-weight="700" font-size="18" fill="#1a1a2e">Легенда:</text>
+                        <circle cx="110" cy="745" r="10" fill="#C41E3A"/>
+                        <text x="135" y="752" font-size="15" fill="#2c3e50">Остановки маршрута (1-11)</text>
+                        <circle cx="110" cy="775" r="12" fill="#DAA520"/>
+                        <text x="135" y="782" font-size="15" fill="#2c3e50">Финальная точка — Краснодар</text>
                     </g>
+                    
+                    <!-- Подпись "Только ключевые города подписаны" -->
+                    <text x="600" y="760" text-anchor="middle" font-size="13" fill="#666" font-style="italic">
+                        💡 Наведите на любую точку для просмотра названия
+                    </text>
                 </svg>
             </div>
             <p class="map-note">💡 Наведите на точки для интерактивного просмотра</p>
@@ -234,7 +251,7 @@
                     </div>
                 </div>
                 <p style="margin-top: 1.5rem; text-align: center;">
-                    <a href="krasnodar-guide.html" style="color: #1F4788; text-decoration: none; font-weight: 600; border-bottom: 2px solid #1F4788;">
+                    <a href="./" style="color: #1F4788; text-decoration: none; font-weight: 600; border-bottom: 2px solid #1F4788;">
                         ← Вернуться к общему путеводителю
                     </a>
                 </p>
@@ -862,9 +879,9 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
                 <div>
                     <h4 style="color: var(--color-accent); margin-bottom: 1rem;">Навигация</h4>
-                    <p><a href="krasnodar-guide.html" style="color: var(--color-text-light); text-decoration: none; opacity: 0.8; transition: opacity 0.3s;">← Главный путеводитель</a></p>
-                    <p><a href="krasnodar-guide.html#nature" style="color: var(--color-text-light); text-decoration: none; opacity: 0.8; transition: opacity 0.3s;">Природа Кубани</a></p>
-                    <p><a href="krasnodar-guide.html#culture" style="color: var(--color-text-light); text-decoration: none; opacity: 0.8; transition: opacity 0.3s;">История и культура</a></p>
+                    <p><a href="./" style="color: var(--color-text-light); text-decoration: none; opacity: 0.8; transition: opacity 0.3s;">← Главный путеводитель</a></p>
+                    <p><a href="index.html#nature" style="color: var(--color-text-light); text-decoration: none; opacity: 0.8; transition: opacity 0.3s;">Природа Кубани</a></p>
+                    <p><a href="index.html#culture" style="color: var(--color-text-light); text-decoration: none; opacity: 0.8; transition: opacity 0.3s;">История и культура</a></p>
                 </div>
                 <div>
                     <h4 style="color: var(--color-accent); margin-bottom: 1rem;">О маршруте</h4>
