@@ -253,13 +253,11 @@ body {
 }
 
 .map-point:hover circle {
-    filter: brightness(1.4) drop-shadow(0 0 15px #C41E3A);
-    transform: scale(1.1);
-    transform-origin: center;
+    filter: brightness(1.3) drop-shadow(0 0 12px #C41E3A);
 }
 
 .map-point circle {
-    transition: all 0.3s ease;
+    transition: filter 0.3s ease;
 }
 
 .route-line {
