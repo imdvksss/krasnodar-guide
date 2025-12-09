@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
+        // Переключение меню по клику на гамбургер
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             mobileToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
@@ -33,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Закрытие меню при клике вне его
+        // Закрытие меню при клике вне навигации
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-container')) {
+            if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
                 mobileToggle.classList.remove('active');
                 navMenu.classList.remove('active');
             }
